@@ -1,0 +1,30 @@
+public class lab2 {
+    public static void main(String[] args) {
+        int[] arr = {3, 5, 7, 2, 7, 5, 8, 8, 1}; // Example array
+        int position = findMaxValuePosition(arr);
+        
+        if (position != -1) {
+            System.out.println("The maximum value is at index: " + position);
+        } else {
+            System.out.println("The array is empty.");
+        }
+    }
+
+    public static int findMaxValuePosition(int[] arr) {
+        if (arr.length == 0) {
+            return -1; // Return -1 for empty array
+        }
+
+        int maxValue = arr[0];
+        int maxPosition = 0;
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > maxValue) {
+                maxValue = arr[i];
+                maxPosition = i; // Update position of the new max value
+            }
+        }
+
+        return maxPosition; // Return the index of the first occurrence of the max value
+    }
+}
